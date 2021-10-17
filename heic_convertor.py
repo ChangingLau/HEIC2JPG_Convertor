@@ -27,7 +27,7 @@ def processing():
         # iterate all files
         for file_i in all_files:
             # process if the file is heic file
-            if file_i.lower().endswith("heic"):
+            if os.path.exist(file_i) & file_i.lower().endswith("heic"):
                 heic_path = os.path.join(
                     target_dir, file_i
                 )
@@ -42,6 +42,8 @@ def processing():
                     )
                 )
                 print_log("Processing {} ...".format(file_i))
+            else:
+                print_log("!!! File path is invalid !!!")
         print_log("ALL Done!")
     else:
         print_log("!!! Directory is invalid !!!")
