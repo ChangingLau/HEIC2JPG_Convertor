@@ -26,11 +26,13 @@ def processing():
         all_files = os.listdir(target_dir)
         # iterate all files
         for file_i in all_files:
-            # process if the file is heic file
-            if os.path.exist(file_i) & file_i.lower().endswith("heic"):
-                heic_path = os.path.join(
+            # heic file path
+            heic_path = os.path.join(
                     target_dir, file_i
                 )
+            # process if the file exisit and it is heic file
+            if os.path.exist(heic_path) & file_i.lower().endswith("heic"):
+                # jpg file path
                 jpg_path = os.path.join(
                     target_dir, "{}.jpg".format(
                         file_i.split(".")[0]
