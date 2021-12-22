@@ -31,7 +31,7 @@ def processing():
                     target_dir, file_i
                 )
             # process if the file exisit and it is heic file
-            if os.path.exist(heic_path) & file_i.lower().endswith("heic"):
+            if os.path.exists(heic_path) & file_i.lower().endswith("heic"):
                 # jpg file path
                 jpg_path = os.path.join(
                     target_dir, "{}.jpg".format(
